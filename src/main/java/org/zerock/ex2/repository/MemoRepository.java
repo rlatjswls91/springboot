@@ -12,4 +12,7 @@ public interface MemoRepository extends JpaRepository<Memo, Long> {
     List<Memo> findByMnoBetweenOrderByMnoDesc(Long from, Long to);
 
     Page<Memo> findByMnoBetween(Long from, Long to, Pageable pageable);
+
+    // 메모의 번호(mno)가 10보다 작은 데이터 삭제
+    void deleteMemoByMnoLessThan(Long num);
 }
